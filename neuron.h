@@ -3,12 +3,12 @@
 #include<stdio.h>
 #include<math.h>
 struct neurone {          //neurone
-int b;                    //bias
-int a;                    //activation
-int w;                    //weight
+float b;                    //bias
+float a;                    //activation
+float w;                    //weight
 }; typedef struct neurone neur ;
 struct layer {
-int n;                    //nombre de neutrone
+float n;                    //nombre de neutrone
 neur *t;                  //tableau de neuronne de taille n
 }; typedef struct layer l;
 layer *network;
