@@ -20,6 +20,8 @@ int main() {
 
     // Initialize the network
     layer *net = (layer *)malloc(numlayer * sizeof(layer));
+    if(net==NULL){ 
+        printf("error d'allocation pour la network !!!");
     init_network(net, numlayer, numneur);
 
     // Free dynamically allocated memory
