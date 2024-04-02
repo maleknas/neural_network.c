@@ -6,34 +6,33 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Function to generate a random number between min and max (inclusive)
-int generate_random(int min, int max) {
-    return min + ((float)rand() / RAND_MAX) * (max - min);
+// Function to generate a random float between 0 and 1 (inclusive)
+float generate_random_float() {
+    return (float)rand() / RAND_MAX;
 }
 
 // Function to initialize a neuron with random values
-void init_neur(neur *neu) {
-    neu->a = generate_random(0, 1);
-    neu->b = 0;
-    neu->w = generate_random(0, 1);
+void init_neur(neuron *neu) {
+    neu->a = generate_random_float();
+    neu->b = generate_random_float();
+    neu->w = generate_random_float();
 }
 
 // Function to initialize a layer with random neurons
 void init_layer(layer *l, int numneur) {
     l->n = numneur;
-    l->t = (neur*)malloc(numneur * sizeof(neur));
+    l->t = (neuron*)malloc(numneur * sizeof(neuron));
     for (int i = 0; i < numneur; i++) {
         init_neur(&l->t[i]);
     }
 }
 
 // Function to initialize a network with random layers
-void init_network(network *net, int numlayer, int *numneur) {
-    net->num_layers = numlayer;
-    net->layers = (layer*)malloc(numlayer * sizeof(layer));
+void init_network(layer *net, int numlayer, int *numneur) {
     for (int i = 0; i < numlayer; i++) {
-        init_layer(&net->layers[i], numneur[i]);
+        init_layer(net[i], numneur[i]);
     }
 }
+
 
 #endif // INITIALISATION_NETWORK_H_INCLUDED
