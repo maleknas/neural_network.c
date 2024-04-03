@@ -11,7 +11,7 @@ int main() {
     scanf("%d", &numlayer);
 
     // Input the number of neurons for each layer
-    printf("Enter the number of neurons for each layer:\n");
+    printf("Enter the number of neurons for each layer:\n");}
     numneur = (int *)malloc(numlayer * sizeof(int));
     for (int i = 0; i < numlayer; i++) {
         printf("Layer %d: ", i + 1);
