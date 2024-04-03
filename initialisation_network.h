@@ -19,11 +19,11 @@ void init_neur(neuron *neu) {
 }
 
 // Function to initialize a layer with random neurons
-void init_layer(layer *l, int numneur) {
-    l->n = numneur;
-    l->t = (neuron*)malloc(numneur * sizeof(neuron));
+void init_layer(layer l, int numneur) {
+    l.n = numneur;
+    l.t = (neuron*)malloc(numneur * sizeof(neuron));
     for (int i = 0; i < numneur; i++) {
-        init_neur(&l->t[i]);
+        init_neur(&l.t[i]);
     }
 }
 
