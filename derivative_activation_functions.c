@@ -3,7 +3,7 @@
 //DERIVATIVE OF SIGMOID
 double derivative_sigmoid(double input)
 {
-    return (1 / (1 + exp(-input))*(1-(1 / (1 + exp(-input)))));  //
+    return (input * (1-input));  // sigmoid(x)*(1-sigmoid(x))
 }
 
 //DERIVATIVE OF ReLU
