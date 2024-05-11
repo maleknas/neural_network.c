@@ -12,7 +12,8 @@ double gradient_descent(double input, double target_output, double learning_rate
         // Forward pass, it shows us the predicted output of the neural network
         predicted_output = sigmoid(weight * input + bias); // in this example, we used the Sigmoid function, we could use ReLU
 
-        // Backpropagation, it computes the gradients of the loss function with respect to the parameters, enabling the model to learn from the training data and improve its predictions over time
+        // Backpropagation, it computes the gradients of the loss function with respect to the parameters, 
+           enabling the model to learn from the training data and improve its predictions over time
         error = predicted_output - target_output;
 
         // Gradient descent update
