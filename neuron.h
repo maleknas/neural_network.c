@@ -6,7 +6,7 @@
 
 struct neuron {
     double b;  // Bias
-    double a;  // Activation
+    double func;  // Activation
     double w;  // Weight
 };
 typedef struct neuron neuron;
